@@ -8,7 +8,6 @@
       "ts-node/register"
     ],
     "format": ["progress-bar", "html:reports/qa-creai-automation-report.html"],
-    "publishQuiet": true,
     "paths": ["features/*.feature"]
   }
 }
