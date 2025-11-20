@@ -8,9 +8,6 @@
     "@cucumber/cucumber": "^12.2.0",
     "@playwright/test": "^1.41.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
-  },
-  "overrides": {
-    "reflect-metadata": "0.2.2"
+    "typescript": "^5.8.0"
   }
 }
