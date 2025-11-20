@@ -10,6 +10,7 @@ Automation exercise on the creai.mx website using cucumber, playwright and types
 * Visual Studio Code
   * Extensions:
     * Cucumber for Visual Studio Code
+    * Cucumber (Gherkin) Full Support
     * Playwright Test for VS Code
 
 ## Project setup for running from VS Code
