@@ -2,12 +2,14 @@
   "name": "qa-automation-creai",
   "version": "1.0.0",
   "scripts": {
-    "test": "cucumber-js"
+    "test": "cucumber-js",               
+    "test:headed": "cross-env HEADLESS=false cucumber-js"
   },
   "dependencies": {
     "@cucumber/cucumber": "^12.2.0",
     "@playwright/test": "^1.41.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.0"
+    "typescript": "^5.8.0",
+    "cross-env": "^7.0.3"
   }
 }

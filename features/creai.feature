@@ -1,33 +1,33 @@
-Feature: Validación de Integridad del Sitio CreAI.mx
+Feature: CreAI.mx Site Integrity Validation
 
   Background:
-    Given que inicio el monitoreo de errores en consola
+    Given I start monitoring for console errors
 
-  Scenario: Validación de carga de página
-    Given navego al sitio "https://www.creai.mx"
-    Then el sitio carga exitosamente y retorna estado HTTP 200
-    And no hay errores visibles en consola
+  Scenario: Page Load Validation
+    Given I navigate to the site "https://www.creai.mx"
+    Then the site loads successfully and returns HTTP status 200
+    And there are no visible errors in the console
 
-  Scenario: Elementos clave presentes
-    Given navego al sitio "https://www.creai.mx"
-    Then validar que el el logo de la marca está visible
-    And validar que exista un botón de contacto
-    And verificar que al menos 3 secciones visibles carguen correctamente
-      | selector | descripcion          |
-      | header   | Encabezado Principal |
-      | footer   | Pie de Página        |
-      | h1       | Título Principal     |
+  Scenario: Key Elements Presence
+    Given I navigate to the site "https://www.creai.mx"
+    Then validate that the brand logo is visible
+    And validate that a contact button exists
+    And verify that following sections load correctly
+      | selector | description         |
+      | header   | Main Header         |
+      | footer   | Page Footer         |
+      | h1       | Main Title          |
 
-  Scenario: Navegación
-    Given navego al sitio "https://www.creai.mx"
-    When hago click sobre el link "About us"
-    Then verificar que redirige correctamente al url "about-us"
+  Scenario: Navigation
+    Given I navigate to the site "https://www.creai.mx"
+    When I click on the link "About us"
+    Then verify that it redirects correctly to the url "about-us"
 
-  Scenario: Mobile viewport
-    Given simular una prueba con viewport móvil "iPhone X"
-    When navego al sitio "https://www.creai.mx"
-    Then verificar que al menos 3 secciones visibles carguen correctamente
-      | selector | descripcion          |
-      | header   | Encabezado Principal |
-      | footer   | Pie de Página        |
-      | h1       | Título Principal     |
+  Scenario: Mobile Viewport
+    Given simulate a test with mobile viewport "iPhone X"
+    When I navigate to the site "https://www.creai.mx"
+    Then verify that following sections load correctly
+      | selector | description         |
+      | header   | Main Header         |
+      | footer   | Page Footer         |
+      | h1       | Main Title          |

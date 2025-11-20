@@ -5,17 +5,19 @@ import { CustomWorld } from './world';
 setDefaultTimeout(60 * 1000);
 
 Before(async function (this: CustomWorld) {
+
+  const headless = process.env.HEADLESS !== 'false'; // default true
+
   this.consoleErrors = []; 
-  this.browser = await chromium.launch({ headless: false });
+  this.browser = await chromium.launch({ headless });
   
-  // *** SIN ignoreHTTPSErrors: true ***
   this.context = await this.browser.newContext({
     viewport: { width: 1280, height: 720 } 
   });
   
   this.page = await this.context.newPage();
 
-  // Listener para errores de consola
+  // Listener of console errors
   this.page.on('console', msg => {
     if (msg.type() === 'error') {
       this.consoleErrors.push(msg.text());
