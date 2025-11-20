@@ -39,12 +39,12 @@ npx playwright install chromium
     ],
 ```
 
-## Execution in headless mode
-```
-npm test
-```
-
 ## Execution in headed mode
 ```
-npm test:headed
+npm run test:headed
+```
+
+## Execution in headless mode
+```
+npm run test
 ```
