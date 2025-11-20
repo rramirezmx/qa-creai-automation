@@ -4,7 +4,7 @@
 
 Automation exercise on the creai.mx website using cucumber, playwright and typescript.
 
-## Prerequistes
+## Prerequisites
 
 * Node.js
 * Visual Studio Code
