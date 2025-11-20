@@ -39,7 +39,8 @@ Then('the site loads successfully and returns HTTP status {int}', async function
     console.log(`[Result ✔]: HTTP status ${status} returned correctly.`);
   } catch (e) {
     console.error(`[Result ✖]: Load failed. Expected ${status}, got ${this.response?.status()}.`);
-    throw e;
+    await new Promise(resolve => setTimeout(resolve, 100));
+    throw e;
   }
 });
 
@@ -63,6 +64,7 @@ Then('validate that the brand logo is visible', async function (this: CustomWorl
     console.log('[Result ✔]: Brand logo (img[src*="Logo.svg"]) is visible.');
   } catch (e) {
     console.error('[Result ✖]: Failed to verify the visibility of the logo (img[src*="Logo.svg"]).');
+    await new Promise(resolve => setTimeout(resolve, 100));
     throw e;
   }
 });
@@ -77,6 +79,7 @@ Then('validate that a contact button exists', async function (this: CustomWorld)
     console.log('[Result ✔]: Contact/CTA Button (a[trigger="contact_cta"]) is visible.');
   } catch (e) {
     console.error('[Result ✖]: Failed to verify the visibility of the contact button using the attribute selector.');
+    await new Promise(resolve => setTimeout(resolve, 100));
     throw e;
   }
 });
@@ -91,6 +94,7 @@ Then('verify that following sections load correctly', async function (this: Cust
         console.log(`[Result ✔]: Section '${row.description}' is visible.`);
     } catch (e) {
         console.error(`[Result ✖]: Failed to find section '${row.description}' with selector '${row.selector}'.`);
+        await new Promise(resolve => setTimeout(resolve, 100));
         throw e;
     }
   }
@@ -115,6 +119,7 @@ Then('verify that it redirects correctly to the url {string}', async function (t
 
   } catch (e) {
     console.error(`[Result ✖]: Redirection or key content failed. ...`);
+    await new Promise(resolve => setTimeout(resolve, 100));
     throw e;
   }
 });
